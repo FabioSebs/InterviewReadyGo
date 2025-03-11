@@ -47,14 +47,37 @@ func (ll *LinkedList) AddToList(newValue int) {
 	ll.Tail = newNode
 }
 
-// * todo
 func (ll *LinkedList) ReverseLinkedList() {
+	var prev *Node     // Pointer to track the previous node (initially nil)
+	current := ll.Head // Start from the head of the linked list
 
+	// Loop through the linked list
+	for current != nil {
+		next := current.Next // Store the next node before breaking the link
+
+		current.Next = prev // Reverse the pointer (make current point to previous node)
+
+		prev = current // Move prev forward (prev becomes the current node)
+		current = next // Move current forward (to the stored next node)
+	}
+
+	// Swap head and tail because the list is now reversed
+	ll.Tail, ll.Head = ll.Head, prev
 }
 
-// * todo
-func (ll *LinkedList) FindTarget() {
+func (ll *LinkedList) FindTarget(target int) {
+	var (
+		head         = ll.Head
+		position int = 1
+	)
 
+	for head != nil {
+		if target == head.Value {
+			fmt.Printf("Found Target ! Position : %d", target)
+		}
+		position += 1
+		head = head.Next
+	}
 }
 
 func (ll *LinkedList) PrintList() {
