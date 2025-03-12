@@ -1,4 +1,4 @@
-package leetcode
+package datastructures
 
 import (
 	"fmt"

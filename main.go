@@ -1,16 +1,11 @@
 package main
 
-import "github.com/FabioSebs/InterviewReadyGo/leetcode"
+import "github.com/FabioSebs/InterviewReadyGo/datastructures"
 
 func main() {
-	myLinkedList := leetcode.NewLinkedList(1)
-
-	myLinkedList.AddToList(2)
-	myLinkedList.AddToList(3)
-
-	myLinkedList.PrintList()
-
-	myLinkedList.ReverseLinkedList()
-
-	myLinkedList.PrintList()
+	dll := datastructures.NewDLL()
+	dll.AddToList(1)
+	dll.AddToList(2)
+	dll.AddToList(3)
+	dll.PrintListBackwards()
 }
