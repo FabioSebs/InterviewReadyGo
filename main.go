@@ -7,9 +7,7 @@ import (
 )
 
 func main() {
-	testArray := []int{1, 1, 2, 3, 4, 5, 5, 6}
-	testArray2 := []int{1, 2, 3, 4, 5}
+	testArray := []string{"flower", "flow", "flight"}
 
-	fmt.Println(leetcode.RemoveDuplicates(testArray))
-	fmt.Println(leetcode.RemoveDuplicates(testArray2))
+	fmt.Println(leetcode.LongestCommonPrefix(testArray))
 }
